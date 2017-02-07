@@ -103,23 +103,25 @@ def rowsOuter(n,rep):
     x = createRandVector(n)
     print
     
-    i_max = n
-    j_max = n
+    i_max = str(int(n)-1)
+    j_max = str(int(n)-1)
     
     #b will be of size n (i-rows) by 1 (j-cols)
     print "Vector b = "
     b = np.zeros(shape=(int(n),1))
     print b
+    print
     
     for iteration in rep:
         
-        for i in i_max:
-            print b(i)
-            for j in j_max:
-                print "A[i][j] = " + A[i][j]
-                print "x[j] = " + x[j]
-                b[i] = b[i] + A[i][j] * x[j]
-    
+        for i in range(0,int(n)):
+            print "i: " + str(i)
+            for j in range(0,int(n)):
+                print "j: " + str(j)
+                print "A[i][j] = " + str(A[int(i)][int(j)])
+                print "x[j] = " + str(x[int(j)])
+                b[int(i)] = b[int(i)] + A[int(i)][int(j)] * x[int(j)]
+                print b[int(i)]
     
     print b
     
